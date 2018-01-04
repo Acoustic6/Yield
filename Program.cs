@@ -9,10 +9,8 @@ namespace Yield
 
         static IEnumerable<int> GetRandomNumbers(int count)
         {
-            List<int> ints = new List<int>();
             for (int i = 0; i < count; i++)
-                ints.Add(ran.Next()); 
-            return ints;
+                yield return ran.Next();
         }
 
         static void Main(string[] args)
