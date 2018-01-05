@@ -1,1 +1,1 @@
-This is a compiler's version of yield return from previous commit.
+Now i rewrite foreach loop in a way the compiler sees it.

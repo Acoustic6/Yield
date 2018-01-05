@@ -16,8 +16,17 @@ namespace Yield
 
         static void Main(string[] args)
         {
-            foreach (var item in GetRandomNumbers(10))
-                Console.WriteLine(item);
+            IEnumerable<int> list = new GetRandomNumbersClass(10);
+            IEnumerator<int> rator = list.GetEnumerator();
+            try
+            {
+                while(rator.MoveNext())
+                    Console.WriteLine(rator.Current);                    
+            }
+            finally
+            {
+                rator.Dispose();
+            }
         }
 
         class GetRandomNumbersClass : IEnumerable<int>, IEnumerator<int>
